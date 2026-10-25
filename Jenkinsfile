@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        PATH = "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin;${env.PATH}"
+        DOCKER_HOST = 'tcp://localhost:2375'
+        KUBECONFIG = 'C:\\Users\\DELL\\.kube\\config'
+    }
     stages {
         stage('Build Docker Image') {
             steps {
